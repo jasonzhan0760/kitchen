@@ -230,7 +230,7 @@ Primary keyword direction:
 
 Email:
 
-sales@cheungxin.com
+sales@desiole.com
 
 Phone:
 

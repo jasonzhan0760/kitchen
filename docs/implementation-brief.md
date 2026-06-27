@@ -126,7 +126,7 @@ Phase 2.2 implements the following confirmed updates:
 
 - Phone number: `+86 13760004391`.
 - Clickable phone link: `tel:+8613760004391`.
-- Public contact email remains `sales@cheungxin.com`.
+- Public contact email is `sales@desiole.com`.
 - RFQ form submissions send to `sales@desiole.com` and CC `stella@desiole.com`.
 - RFQ email subject format: `New DESIOLE Kitchen RFQ - {Product Interest}`.
 - Right-side fixed contact icons are added for WhatsApp and Contact.

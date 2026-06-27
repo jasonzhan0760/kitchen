@@ -13,7 +13,7 @@ Use this file to record project decisions, conflicts, and confirmations.
 | 2026-06-27 | Phone display was initially deferred until a number was explicitly provided. | User confirmation |
 | 2026-06-27 | Technical stack is WordPress, Astra Child Theme, WooCommerce, WooCommerce Catalog Mode, no Elementor, and no heavy page builder. | User confirmation |
 | 2026-06-27 | Phone number is now confirmed as `+86 13760004391`; the previous no-phone rule is superseded. Use `tel:+8613760004391` for clickable phone links and `https://wa.me/8613760004391` for WhatsApp. | User confirmation |
-| 2026-06-27 | Public website contact email remains `sales@cheungxin.com`. RFQ form submission emails go to `sales@desiole.com` and CC `stella@desiole.com`. | User confirmation |
+| 2026-06-27 | Public website contact email is corrected to `sales@desiole.com`. RFQ form submission emails go to `sales@desiole.com` and CC `stella@desiole.com`. | User confirmation |
 | 2026-06-27 | Add two right-side fixed contact icons: WhatsApp linking to `https://wa.me/8613760004391` and Contact linking to `/contact/`. | User confirmation |
 
 ## Conflicts

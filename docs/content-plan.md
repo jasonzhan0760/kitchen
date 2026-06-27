@@ -129,7 +129,7 @@ Core FAQ topics:
 Email:
 
 ```text
-sales@cheungxin.com
+sales@desiole.com
 ```
 
 Phone:
@@ -158,7 +158,7 @@ WhatsApp link:
 https://wa.me/8613760004391
 ```
 
-Public email remains `sales@cheungxin.com`.
+Public email is `sales@desiole.com`.
 
 RFQ form email routing:
 

@@ -61,10 +61,10 @@ Product-aware link:
 
 ## RFQ Email Routing
 
-Public website contact email remains:
+Public website contact email:
 
 ```text
-sales@cheungxin.com
+sales@desiole.com
 ```
 
 Request Quote / RFQ form submissions should be emailed to:

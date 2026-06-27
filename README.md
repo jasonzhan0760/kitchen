@@ -63,7 +63,7 @@ Placeholder paths:
 
 ## Contact Info
 
-Email: sales@cheungxin.com  
+Email: sales@desiole.com
 Phone: +86 13760004391  
 Address: Room 6A, Floor 6, Building 6, Longbi Industrial Zone, Bantian Daipu, Longgang District, Shenzhen, China 518129
 

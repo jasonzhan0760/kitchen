@@ -13,7 +13,7 @@ define( 'DESIOLE_KITCHEN_VERSION', '1.0.0' );
 
 function desiole_kitchen_get_contact_info() {
 	return array(
-		'public_email'  => 'sales@cheungxin.com',
+		'public_email'  => 'sales@desiole.com',
 		'phone'         => '+86 13760004391',
 		'phone_tel'     => 'tel:+8613760004391',
 		'whatsapp_url'  => 'https://wa.me/8613760004391',
