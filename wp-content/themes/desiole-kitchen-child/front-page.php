@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $categories = desiole_kitchen_get_product_categories();
+$hero_image = desiole_kitchen_image_url( 'home-hero-kitchen-tools.png' );
 
 $services = array(
 	array( 'title' => 'Customization & Branding', 'text' => 'Custom logos, colors, materials and private label packaging for differentiated product lines.', 'url' => '/customization/', 'image' => 'service-customization-packaging.png' ),
@@ -44,9 +45,11 @@ get_header();
 				<a class="desiole-button desiole-button-secondary" href="<?php echo esc_url( home_url( '/products/' ) ); ?>">View Products</a>
 			</div>
 		</div>
-		<div class="desiole-hero-media" aria-label="<?php esc_attr_e( 'Professional kitchen tools product set', 'desiole-kitchen' ); ?>">
-			<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/home-hero-kitchen-tools.png' ); ?>" alt="Professional kitchen tools, cookware, bakeware, drinkware and appliances product set">
-		</div>
+		<?php if ( $hero_image ) : ?>
+			<div class="desiole-hero-media" aria-label="<?php esc_attr_e( 'Professional kitchen tools product set', 'desiole-kitchen' ); ?>">
+				<img src="<?php echo esc_url( $hero_image ); ?>" alt="Professional kitchen tools, cookware, bakeware, drinkware and appliances product set">
+			</div>
+		<?php endif; ?>
 	</div>
 </section>
 
