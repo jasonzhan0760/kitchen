@@ -1,4 +1,3 @@
-# kitchen
 # DESIOLE Kitchen Project Instructions
 
 ## Project Overview
