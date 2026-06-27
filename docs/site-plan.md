@@ -113,6 +113,7 @@ Secondary conversion actions:
 - Private Label Packaging Inquiry
 - Amazon FBA Support Inquiry
 - Contact Sales by email
+- Contact by phone or WhatsApp
 
 Inquiry links should lead to:
 
@@ -130,7 +131,7 @@ The Request Quote page should support B2B sourcing requests and include:
 
 - Hero section
 - Short explanation
-- RFQ form placeholder
+- Secure RFQ form
 - What to include in the request
 - Contact info block
 - FAQ block
@@ -150,7 +151,15 @@ Static placeholder fields:
 - Upload File placeholder
 - Submit Inquiry button
 
-Actual email sending should be connected later through a selected WordPress form plugin.
+RFQ form submission should use WordPress mail handling unless a form plugin is selected later.
+
+RFQ email routing:
+
+- To: `sales@desiole.com`
+- CC: `stella@desiole.com`
+- Subject format: `New DESIOLE Kitchen RFQ - {Product Interest}`
+
+The RFQ email body should include name, company, email, country / region, product interest, estimated quantity, custom logo requirement, private label packaging requirement, Amazon FBA requirement and message.
 
 ## WooCommerce Catalog Mode Strategy
 
@@ -223,8 +232,25 @@ Email:
 
 sales@cheungxin.com
 
+Phone:
+
++86 13760004391
+
 Address:
 
 Room 6A, Floor 6, Building 6, Longbi Industrial Zone, Bantian Daipu, Longgang District, Shenzhen, China 518129
 
-Do not add a phone number unless it is explicitly provided.
+The previous no-phone rule is superseded because the phone number is now explicitly confirmed.
+
+Clickable phone link:
+
+`tel:+8613760004391`
+
+WhatsApp link:
+
+`https://wa.me/8613760004391`
+
+Right-side fixed contact icons:
+
+- WhatsApp icon linking to `https://wa.me/8613760004391`
+- Email/contact icon linking to `/contact/`

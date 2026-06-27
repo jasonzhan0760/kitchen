@@ -40,6 +40,13 @@
 	padding: 9px 0;
 }
 
+.desiole-topbar-contact {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	justify-content: flex-end;
+}
+
 .desiole-topbar a,
 .desiole-footer a {
 	color: inherit;
@@ -97,7 +104,8 @@
 }
 
 .desiole-menu-toggle,
-.desiole-mobile-quote {
+.desiole-mobile-quote,
+.desiole-submenu-toggle {
 	display: none;
 }
 
@@ -308,8 +316,9 @@
 }
 
 .desiole-data-strip {
-	background: var(--desiole-red);
+	background: var(--desiole-footer);
 	color: var(--desiole-white);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .desiole-data-grid {
@@ -318,8 +327,19 @@
 }
 
 .desiole-data-grid div {
+	position: relative;
 	padding: 24px 22px;
 	border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.desiole-data-grid div::before {
+	position: absolute;
+	top: 22px;
+	left: 0;
+	width: 4px;
+	height: 28px;
+	background: var(--desiole-red);
+	content: "";
 }
 
 .desiole-data-grid div:last-child {
@@ -530,6 +550,22 @@
 	padding: 20px 22px;
 }
 
+.desiole-mini-faq {
+	display: grid;
+	gap: 10px;
+	margin-bottom: 18px;
+}
+
+.desiole-mini-faq details {
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--desiole-border);
+}
+
+.desiole-mini-faq summary {
+	cursor: pointer;
+	font-weight: 800;
+}
+
 .desiole-faq summary {
 	cursor: pointer;
 	font-weight: 800;
@@ -734,6 +770,37 @@
 	gap: 18px;
 }
 
+.desiole-honeypot {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.desiole-form-alert {
+	margin-bottom: 18px;
+	padding: 14px 16px;
+	border-radius: 6px;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+.desiole-form-alert p,
+.desiole-form-alert ul {
+	margin: 0;
+}
+
+.desiole-form-alert--success {
+	background: #edf9f0;
+	color: #1f6b35;
+}
+
+.desiole-form-alert--error {
+	background: #fff1f1;
+	color: var(--desiole-deep-red);
+}
+
 .desiole-archive-intro {
 	padding-bottom: 0;
 }
@@ -837,6 +904,53 @@
 	color: var(--desiole-muted);
 }
 
+.desiole-floating-contact {
+	position: fixed;
+	right: 18px;
+	top: 50%;
+	z-index: 60;
+	display: grid;
+	gap: 10px;
+	transform: translateY(-50%);
+}
+
+.desiole-floating-contact__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-width: 116px;
+	min-height: 46px;
+	padding: 0 14px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 6px 0 0 6px;
+	background: var(--desiole-charcoal);
+	color: var(--desiole-white);
+	font-size: 13px;
+	font-weight: 800;
+	text-decoration: none;
+	box-shadow: 0 16px 35px rgba(21, 23, 25, 0.22);
+	transition: background 160ms ease, transform 160ms ease;
+}
+
+.desiole-floating-contact__link:hover,
+.desiole-floating-contact__link:focus {
+	background: var(--desiole-red);
+	color: var(--desiole-white);
+	transform: translateX(-3px);
+}
+
+.desiole-floating-contact__link--whatsapp {
+	background: var(--desiole-red);
+}
+
+.desiole-floating-contact__link svg {
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
+	flex: 0 0 auto;
+}
+
 @media (max-width: 1024px) {
 	.desiole-header-inner {
 		flex-wrap: nowrap;
@@ -883,6 +997,7 @@
 	}
 
 	.desiole-nav-list li {
+		position: relative;
 		width: 100%;
 	}
 
@@ -893,15 +1008,43 @@
 		padding: 8px 0;
 	}
 
+	.desiole-nav-list .menu-item-has-children > a {
+		padding-right: 48px;
+	}
+
+	.desiole-submenu-toggle {
+		position: absolute;
+		top: 3px;
+		right: 0;
+		display: grid;
+		place-items: center;
+		width: 38px;
+		height: 38px;
+		border: 1px solid var(--desiole-border);
+		border-radius: 6px;
+		background: var(--desiole-white);
+		color: var(--desiole-charcoal);
+		cursor: pointer;
+		font-size: 18px;
+		font-weight: 800;
+	}
+
 	.desiole-nav-list .sub-menu {
 		position: static;
+		display: none;
 		min-width: 0;
 		padding: 4px 0 8px 14px;
 		border: 0;
 		box-shadow: none;
+		opacity: 0;
+		pointer-events: none;
+		transform: none;
+	}
+
+	.desiole-nav-list .is-submenu-open > .sub-menu {
+		display: grid;
 		opacity: 1;
 		pointer-events: auto;
-		transform: none;
 	}
 
 	.desiole-hero-grid,
@@ -936,6 +1079,10 @@
 		flex-direction: column;
 	}
 
+	.desiole-topbar-contact {
+		justify-content: flex-start;
+	}
+
 	.desiole-header-cta {
 		width: 100%;
 	}
@@ -968,5 +1115,29 @@
 
 	.desiole-footer-bottom nav {
 		flex-wrap: wrap;
+	}
+
+	.desiole-floating-contact {
+		right: 12px;
+		top: auto;
+		bottom: 18px;
+		transform: none;
+	}
+
+	.desiole-floating-contact__link {
+		min-width: 46px;
+		width: 46px;
+		min-height: 46px;
+		padding: 0;
+		border-radius: 50%;
+	}
+
+	.desiole-floating-contact__link span {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
 	}
 }

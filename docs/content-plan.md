@@ -76,6 +76,22 @@ Final product categories:
 
 Category intro copy should emphasize wholesale supply, customization options, packaging support, and export readiness.
 
+## Category SEO Foundation
+
+Each product category should have starter SEO content that can be expanded later:
+
+| Category | SEO H1 | Content Focus |
+| --- | --- | --- |
+| Cooking Tools | Wholesale Cooking Tools Supplier In China | Daily cooking tools, utensil sets, logo and packaging options |
+| Baking Tools | Wholesale Baking Tools Supplier In China | Bakeware, molds, silicone/metal tools, custom colors and retail packaging |
+| Coffee, Bar & Cigar Accessories | Wholesale Coffee, Bar & Cigar Accessories Supplier | Gift sets, logo marking, premium packaging and mixed accessory sourcing |
+| Kitchen Utensils & Gadgets | Wholesale Kitchen Utensils & Gadgets Supplier | High-demand gadgets, retail-ready packaging, FBA preparation |
+| Kitchen Organization | Wholesale Kitchen Organization Supplier In China | Storage racks, organizers, containers, carton planning and private labels |
+| Kitchen Appliances | Wholesale Kitchen Appliances Supplier In China | Compact appliances, specs, voltage/plug requirements, packaging and compliance review |
+| Drinkware | Wholesale Drinkware Supplier In China | Cups, bottles, logo methods, capacity/material requirements and private label packaging |
+
+For each category, prepare short intro copy, wholesale advantages, customization notes, MOQ / packaging notes, 3 FAQ items and final Request Quote CTA text.
+
 ## Product Content Rules
 
 Product copy should be inquiry-oriented and B2B-focused. Include practical specification fields and avoid consumer checkout language.
@@ -116,13 +132,39 @@ Email:
 sales@cheungxin.com
 ```
 
+Phone:
+
+```text
++86 13760004391
+```
+
 Address:
 
 ```text
 Room 6A, Floor 6, Building 6, Longbi Industrial Zone, Bantian Daipu, Longgang District, Shenzhen, China 518129
 ```
 
-Do not add a phone number unless explicitly provided.
+The phone number is explicitly confirmed and should be displayed in footer, contact blocks and RFQ support areas.
+
+Clickable phone link:
+
+```text
+tel:+8613760004391
+```
+
+WhatsApp link:
+
+```text
+https://wa.me/8613760004391
+```
+
+Public email remains `sales@cheungxin.com`.
+
+RFQ form email routing:
+
+- To: `sales@desiole.com`
+- CC: `stella@desiole.com`
+- Subject: `New DESIOLE Kitchen RFQ - {Product Interest}`
 
 ## Blog Topics
 
@@ -131,4 +173,3 @@ Do not add a phone number unless explicitly provided.
 - Amazon FBA preparation for kitchenware sellers
 - Low MOQ kitchen tools sourcing guide
 - Quality control checklist for kitchen tools suppliers
-

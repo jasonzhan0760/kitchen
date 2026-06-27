@@ -2,7 +2,7 @@
 
 ## Current Task
 
-Phase 1: Create a lightweight Astra child theme and implement the DESIOLE Kitchen homepage based on the third selected design.
+Phase 2.2: RFQ handling, contact update, floating contact icons, mobile dropdown improvements and category SEO foundations.
 
 Phase 1 was reviewed through the logged-in ChatGPT workspace on 2026-06-27. The review result was conditional approval: the direction and core implementation match the agreed plan, but Phase 1 should be self-checked before deeper rollout.
 
@@ -67,7 +67,7 @@ The theme should include:
 - WooCommerce prices and cart/checkout purchase actions are hidden.
 - Product inquiry buttons link to `/request-quote/`.
 - Product-specific quote links pass the product name when possible.
-- No phone number is added.
+- Confirmed phone number is displayed where contact information appears.
 - Changed files are listed after completion.
 - No existing project decisions are removed unless explicitly requested.
 
@@ -81,7 +81,7 @@ Before or during Phase 2, verify:
 - Request Quote product links pass product names through the `/request-quote/?product=...` query parameter.
 - Desktop and mobile navigation support dropdowns for Products, Customization, and About Us.
 - WooCommerce archive and single product pages do not show prices, Add to Cart buttons, quantity selectors, cart links, or checkout links.
-- Footer does not include a phone number.
+- Footer includes public email, confirmed phone number and Shenzhen address.
 - Footer uses the confirmed Shenzhen address.
 - Hero and product images include meaningful alt text.
 
@@ -91,7 +91,7 @@ Build the next B2B site foundations:
 
 - Product category archive experience for the seven final product categories.
 - WooCommerce single product B2B inquiry template.
-- Request Quote page with static RFQ fields until the final form plugin is selected.
+- Request Quote page with secure basic `wp_mail()` RFQ handling.
 - Customization landing and service pages.
 - Amazon FBA support page.
 - About Us core pages: Company Profile, Factory Tour, Quality Control, Blog placeholder, and FAQ.
@@ -118,4 +118,20 @@ Phase 2.1 still requires visual checking inside a running WordPress install afte
 
 - Final logo files are still pending.
 - Final product images are still pending beyond the generated Phase 1 hero asset.
-- Final Request Quote form plugin or implementation is not yet selected.
+- A basic `wp_mail()` RFQ implementation exists; a plugin can replace it later if needed.
+
+## Phase 2.2 Scope
+
+Phase 2.2 implements the following confirmed updates:
+
+- Phone number: `+86 13760004391`.
+- Clickable phone link: `tel:+8613760004391`.
+- Public contact email remains `sales@cheungxin.com`.
+- RFQ form submissions send to `sales@desiole.com` and CC `stella@desiole.com`.
+- RFQ email subject format: `New DESIOLE Kitchen RFQ - {Product Interest}`.
+- Right-side fixed contact icons are added for WhatsApp and Contact.
+- WhatsApp link: `https://wa.me/8613760004391`.
+- Contact icon links to `/contact/`.
+- Mobile dropdowns use independent submenu toggles with `aria-expanded`.
+- Product category SEO starter copy exists for all seven categories.
+- Homepage factory-direct data strip uses a dark charcoal background with red accent details.

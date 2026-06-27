@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $slug = get_post_field( 'post_name', get_queried_object_id() );
+$desiole_contact = desiole_kitchen_get_contact_info();
 $pages = array(
 	'products'                       => array(
 		'kicker' => 'Product categories',
@@ -119,11 +120,20 @@ get_header();
 			<div class="desiole-page-grid">
 				<article class="desiole-page-panel">
 					<h2>Email</h2>
-					<p><a href="mailto:sales@cheungxin.com">sales@cheungxin.com</a></p>
+					<p><a href="mailto:<?php echo esc_attr( $desiole_contact['public_email'] ); ?>"><?php echo esc_html( $desiole_contact['public_email'] ); ?></a></p>
+				</article>
+				<article class="desiole-page-panel">
+					<h2>Phone</h2>
+					<p><a href="<?php echo esc_url( $desiole_contact['phone_tel'] ); ?>"><?php echo esc_html( $desiole_contact['phone'] ); ?></a></p>
 				</article>
 				<article class="desiole-page-panel">
 					<h2>Address</h2>
-					<p>Room 6A, Floor 6, Building 6, Longbi Industrial Zone, Bantian Daipu, Longgang District, Shenzhen, China 518129</p>
+					<p><?php echo esc_html( $desiole_contact['address'] ); ?></p>
+				</article>
+				<article class="desiole-page-panel">
+					<h2>Request Quote</h2>
+					<p>Send product names, target quantity, customization needs and destination market for B2B quotation support.</p>
+					<a class="desiole-button desiole-button-primary" href="<?php echo esc_url( home_url( '/request-quote/' ) ); ?>">Request Quote</a>
 				</article>
 			</div>
 		<?php elseif ( 'faq' === $slug ) : ?>

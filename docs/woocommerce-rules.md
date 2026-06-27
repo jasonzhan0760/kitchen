@@ -59,6 +59,29 @@ Product-aware link:
 /request-quote/?product=PRODUCT_NAME
 ```
 
+## RFQ Email Routing
+
+Public website contact email remains:
+
+```text
+sales@cheungxin.com
+```
+
+Request Quote / RFQ form submissions should be emailed to:
+
+```text
+To: sales@desiole.com
+CC: stella@desiole.com
+```
+
+Subject format:
+
+```text
+New DESIOLE Kitchen RFQ - {Product Interest}
+```
+
+The RFQ handler should sanitize fields, verify a nonce, validate the customer email, use a honeypot field for basic spam filtering and set Reply-To to the customer email when valid.
+
 ## Cart And Checkout
 
 Cart and checkout links should be hidden from navigation and storefront UI. If customers reach cart or checkout directly, redirect them toward the Request Quote flow where possible.
@@ -66,4 +89,3 @@ Cart and checkout links should be hidden from navigation and storefront UI. If c
 ## Admin Editing Rules
 
 Keep product content editable through WooCommerce admin. Catalog mode should be handled by theme hooks and filters, not by hardcoding product data into templates.
-

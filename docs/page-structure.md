@@ -116,9 +116,11 @@ About Us structure:
 Contact details:
 
 - Email: `sales@cheungxin.com`
+- Phone: `+86 13760004391`
 - Address: `Room 6A, Floor 6, Building 6, Longbi Industrial Zone, Bantian Daipu, Longgang District, Shenzhen, China 518129`
 
-Do not add a phone number unless it is explicitly provided.
+The phone number has been explicitly provided. Use `tel:+8613760004391` for clickable phone links and `https://wa.me/8613760004391` for WhatsApp.
 
 Request Quote forms should support product-specific inquiries and may accept a `product` query parameter.
 
+RFQ form submissions should send to `sales@desiole.com` and CC `stella@desiole.com`. This RFQ routing is separate from the public contact email.

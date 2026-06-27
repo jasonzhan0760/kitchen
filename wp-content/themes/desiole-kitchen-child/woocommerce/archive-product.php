@@ -11,15 +11,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $queried_object = get_queried_object();
 $category_name  = is_product_category() && isset( $queried_object->name ) ? $queried_object->name : woocommerce_page_title( false );
+$foundation     = desiole_kitchen_get_category_foundation_for_current_archive();
 
 get_header();
 ?>
 <section class="desiole-page-hero">
 	<div class="desiole-container">
 		<p class="desiole-kicker">Product catalog</p>
-		<h1><?php woocommerce_page_title(); ?></h1>
+		<h1><?php echo esc_html( $foundation ? $foundation['h1'] : woocommerce_page_title( false ) ); ?></h1>
 		<?php if ( term_description() ) : ?>
 			<div class="desiole-archive-description"><?php echo wp_kses_post( term_description() ); ?></div>
+		<?php elseif ( $foundation ) : ?>
+			<p><?php echo esc_html( $foundation['intro'] ); ?></p>
 		<?php else : ?>
 			<p>Browse wholesale kitchen tools for private label, retail, distribution and Amazon FBA sourcing projects.</p>
 		<?php endif; ?>
@@ -30,12 +33,12 @@ get_header();
 	<div class="desiole-container desiole-page-grid">
 		<div class="desiole-page-panel">
 			<h2><?php echo esc_html( $category_name ); ?> Wholesale Supply</h2>
-			<p>DESIOLE Kitchen supports B2B buyers with factory-direct sourcing, practical MOQ planning, custom branding and export-ready quality control for kitchenware projects.</p>
+			<p><?php echo esc_html( $foundation ? $foundation['advantages'] : 'DESIOLE Kitchen supports B2B buyers with factory-direct sourcing, practical MOQ planning, custom branding and export-ready quality control for kitchenware projects.' ); ?></p>
 		</div>
 		<div class="desiole-page-panel">
 			<h2>Category Support</h2>
 			<ul>
-				<li>Custom logo and private label packaging options</li>
+				<li><?php echo esc_html( $foundation ? $foundation['customization'] : 'Custom logo and private label packaging options' ); ?></li>
 				<li>Amazon FBA labeling, carton marks and packing coordination</li>
 				<li>Sample review, bulk order planning and shipment preparation</li>
 			</ul>
@@ -83,11 +86,25 @@ get_header();
 		</div>
 		<div class="desiole-page-panel">
 			<h2>MOQ, Packaging And Shipping</h2>
-			<p>MOQ, sample timing and bulk production lead time depend on product model, material, logo process and packaging scope. Share your target quantity and market requirements for a practical quotation.</p>
+			<p><?php echo esc_html( $foundation ? $foundation['moq_packaging'] : 'MOQ, sample timing and bulk production lead time depend on product model, material, logo process and packaging scope. Share your target quantity and market requirements for a practical quotation.' ); ?></p>
 		</div>
 		<div class="desiole-page-panel">
 			<h2>Category FAQ</h2>
-			<p>DESIOLE Kitchen can support custom branding, Amazon FBA preparation and shipment inspection for selected products in this category. Use the quote form to send product references and quantity targets.</p>
+			<?php if ( $foundation && ! empty( $foundation['faq'] ) ) : ?>
+				<div class="desiole-mini-faq">
+					<?php foreach ( $foundation['faq'] as $faq ) : ?>
+						<details>
+							<summary><?php echo esc_html( $faq['q'] ); ?></summary>
+							<p><?php echo esc_html( $faq['a'] ); ?></p>
+						</details>
+					<?php endforeach; ?>
+				</div>
+			<?php else : ?>
+				<p>DESIOLE Kitchen can support custom branding, Amazon FBA preparation and shipment inspection for selected products in this category. Use the quote form to send product references and quantity targets.</p>
+			<?php endif; ?>
+			<?php if ( $foundation ) : ?>
+				<p><?php echo esc_html( $foundation['cta'] ); ?></p>
+			<?php endif; ?>
 			<a class="desiole-button desiole-button-primary" href="<?php echo esc_url( home_url( '/request-quote/' ) ); ?>">Request Quote</a>
 		</div>
 	</div>

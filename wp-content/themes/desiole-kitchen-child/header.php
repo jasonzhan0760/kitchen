@@ -8,6 +8,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$desiole_contact = desiole_kitchen_get_contact_info();
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -21,7 +23,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="desiole-topbar">
 	<div class="desiole-container desiole-topbar-inner">
 		<span>Factory-direct kitchen tools supply with low MOQ and export-ready quality control</span>
-		<a href="mailto:sales@cheungxin.com">sales@cheungxin.com</a>
+		<span class="desiole-topbar-contact">
+			<a href="mailto:<?php echo esc_attr( $desiole_contact['public_email'] ); ?>"><?php echo esc_html( $desiole_contact['public_email'] ); ?></a>
+			<a href="<?php echo esc_url( $desiole_contact['phone_tel'] ); ?>"><?php echo esc_html( $desiole_contact['phone'] ); ?></a>
+		</span>
 	</div>
 </div>
 <header class="desiole-header">

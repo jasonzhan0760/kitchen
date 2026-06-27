@@ -11,6 +11,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'DESIOLE_KITCHEN_VERSION', '1.0.0' );
 
+function desiole_kitchen_get_contact_info() {
+	return array(
+		'public_email'  => 'sales@cheungxin.com',
+		'phone'         => '+86 13760004391',
+		'phone_tel'     => 'tel:+8613760004391',
+		'whatsapp_url'  => 'https://wa.me/8613760004391',
+		'rfq_to'        => 'sales@desiole.com',
+		'rfq_cc'        => 'stella@desiole.com',
+		'address'       => 'Room 6A, Floor 6, Building 6, Longbi Industrial Zone, Bantian Daipu, Longgang District, Shenzhen, China 518129',
+	);
+}
+
 function desiole_kitchen_get_product_categories() {
 	return array(
 		array( 'title' => 'Cooking Tools', 'slug' => 'cooking-tools', 'url' => '/products/cooking-tools/', 'meta' => 'Utensils, pans, prep tools and everyday cooking essentials' ),
@@ -21,6 +33,114 @@ function desiole_kitchen_get_product_categories() {
 		array( 'title' => 'Kitchen Appliances', 'slug' => 'kitchen-appliances', 'url' => '/products/kitchen-appliances/', 'meta' => 'Compact appliances for wholesale and private label programs' ),
 		array( 'title' => 'Drinkware', 'slug' => 'drinkware', 'url' => '/products/drinkware/', 'meta' => 'Cups, bottles and daily drinkware for branded supply' ),
 	);
+}
+
+function desiole_kitchen_get_category_seo_foundation() {
+	return array(
+		'cooking-tools'                 => array(
+			'h1'                 => 'Wholesale Cooking Tools Supplier In China',
+			'intro'              => 'Source practical cooking tools for retail, distribution, online stores and private label kitchenware programs.',
+			'advantages'         => 'Factory-direct sourcing, low MOQ trial orders and coordinated product ranges for daily cooking needs.',
+			'customization'      => 'Logo printing, handle color options, packaging labels and bundled utensil sets can be planned by project.',
+			'moq_packaging'      => 'MOQ and packaging depend on material, logo method and selected cooking tool models.',
+			'cta'                => 'Send your cooking tools list to confirm MOQ, branding and packaging options.',
+			'faq'                => array(
+				array( 'q' => 'Can cooking tools be customized with our logo?', 'a' => 'Yes, logo options depend on material, surface and order quantity.' ),
+				array( 'q' => 'Can you support utensil set packaging?', 'a' => 'Yes, retail boxes, sleeves, labels and inserts can be coordinated.' ),
+				array( 'q' => 'Can we start with low MOQ?', 'a' => 'Low MOQ trial orders are available for selected cooking tools.' ),
+			),
+		),
+		'baking-tools'                  => array(
+			'h1'                 => 'Wholesale Baking Tools Supplier In China',
+			'intro'              => 'Build bakeware and baking accessory ranges for retailers, baking brands and e-commerce sellers.',
+			'advantages'         => 'Support for silicone, metal and accessory product sourcing with export-ready packaging checks.',
+			'customization'      => 'Custom colors, logo packaging, retail sets and private label bakeware assortments are available by brief.',
+			'moq_packaging'      => 'MOQ varies by mold, material, color and packaging structure.',
+			'cta'                => 'Send your baking tools brief for sample, packaging and quotation planning.',
+			'faq'                => array(
+				array( 'q' => 'Can baking tools use custom colors?', 'a' => 'Yes, custom colors can be prepared when MOQ and material requirements are confirmed.' ),
+				array( 'q' => 'Can you package baking sets?', 'a' => 'Yes, set packaging can include boxes, sleeves, labels and inserts.' ),
+				array( 'q' => 'Do you support Amazon sellers?', 'a' => 'Yes, FBA labeling and carton preparation can be discussed during RFQ.' ),
+			),
+		),
+		'coffee-bar-cigar-accessories'  => array(
+			'h1'                 => 'Wholesale Coffee, Bar & Cigar Accessories Supplier',
+			'intro'              => 'Source coffee tools, barware and premium accessories for gift, retail and hospitality channels.',
+			'advantages'         => 'Flexible sourcing across accessory ranges with packaging coordination for branded presentation.',
+			'customization'      => 'Logo marking, gift boxes, custom sleeves and bundled accessory sets can support brand programs.',
+			'moq_packaging'      => 'MOQ depends on product material, finish, logo process and gift packaging scope.',
+			'cta'                => 'Share your accessory range and branding needs for a tailored quotation path.',
+			'faq'                => array(
+				array( 'q' => 'Can accessories be made as gift sets?', 'a' => 'Yes, bundled sets and gift packaging can be planned by project.' ),
+				array( 'q' => 'Can metal accessories include logos?', 'a' => 'Yes, marking options depend on surface and material.' ),
+				array( 'q' => 'Can you source mixed accessory ranges?', 'a' => 'Yes, mixed ranges can be reviewed for MOQ and packaging feasibility.' ),
+			),
+		),
+		'kitchen-utensils-gadgets'      => array(
+			'h1'                 => 'Wholesale Kitchen Utensils & Gadgets Supplier',
+			'intro'              => 'Find high-demand kitchen utensils and gadgets for online stores, supermarkets and promotion programs.',
+			'advantages'         => 'Broad sourcing coverage, low MOQ options and fast buyer validation for practical kitchen gadgets.',
+			'customization'      => 'Custom logo, color, packaging and display-ready formats can be prepared for selected gadgets.',
+			'moq_packaging'      => 'MOQ is confirmed by product complexity, mold availability, color and packaging needs.',
+			'cta'                => 'Send target gadget references to confirm sourcing feasibility and MOQ.',
+			'faq'                => array(
+				array( 'q' => 'Can you source new gadget ideas?', 'a' => 'Yes, reference images or links help confirm available models and customization paths.' ),
+				array( 'q' => 'Can packaging be retail-ready?', 'a' => 'Yes, retail boxes, hang cards and barcode labels can be coordinated.' ),
+				array( 'q' => 'Can gadgets be prepared for FBA?', 'a' => 'Yes, labeling and carton requirements can be included in the quotation.' ),
+			),
+		),
+		'kitchen-organization'          => array(
+			'h1'                 => 'Wholesale Kitchen Organization Supplier In China',
+			'intro'              => 'Source storage racks, organizers, containers and space-saving kitchen organization products.',
+			'advantages'         => 'Support for practical storage ranges with carton planning, packaging checks and wholesale supply.',
+			'customization'      => 'Color, label, private packaging and product set combinations can be prepared by buyer requirements.',
+			'moq_packaging'      => 'MOQ and packaging depend on size, material, carton volume and shipping requirements.',
+			'cta'                => 'Send your kitchen organization product list for MOQ and packaging review.',
+			'faq'                => array(
+				array( 'q' => 'Can large organizers be packed for export?', 'a' => 'Yes, carton strength and packing method should be confirmed before bulk order.' ),
+				array( 'q' => 'Can storage products use private labels?', 'a' => 'Yes, labels, inserts and boxes can be coordinated.' ),
+				array( 'q' => 'Can we combine several organizers?', 'a' => 'Mixed sourcing can be reviewed based on MOQ and carton planning.' ),
+			),
+		),
+		'kitchen-appliances'            => array(
+			'h1'                 => 'Wholesale Kitchen Appliances Supplier In China',
+			'intro'              => 'Source compact kitchen appliances for B2B buyers, private label programs and e-commerce channels.',
+			'advantages'         => 'Project review includes product specs, packaging, compliance needs and export preparation.',
+			'customization'      => 'Logo, color, packaging and instruction material options can be reviewed by appliance model.',
+			'moq_packaging'      => 'MOQ depends on appliance type, certification needs, voltage, plug type and packaging.',
+			'cta'                => 'Send appliance specs and target market requirements for quotation planning.',
+			'faq'                => array(
+				array( 'q' => 'Can appliance packaging be private label?', 'a' => 'Yes, packaging can be reviewed once product model and order scope are confirmed.' ),
+				array( 'q' => 'Do appliances need market-specific checks?', 'a' => 'Yes, voltage, plug type and compliance requirements should be confirmed early.' ),
+				array( 'q' => 'Can you support sample review?', 'a' => 'Yes, sample timing can be planned after model and requirements are clear.' ),
+			),
+		),
+		'drinkware'                     => array(
+			'h1'                 => 'Wholesale Drinkware Supplier In China',
+			'intro'              => 'Source cups, bottles and daily drinkware for branded supply, retail programs and online channels.',
+			'advantages'         => 'Support for product selection, logo methods, packaging and quality checks for drinkware projects.',
+			'customization'      => 'Logo printing, color options, private label packaging and set packaging can be prepared by order scope.',
+			'moq_packaging'      => 'MOQ varies by material, color, capacity, logo method and packaging requirements.',
+			'cta'                => 'Send drinkware capacity, material and branding requirements to start quotation.',
+			'faq'                => array(
+				array( 'q' => 'Can drinkware include custom logos?', 'a' => 'Yes, logo methods depend on material, surface and quantity.' ),
+				array( 'q' => 'Can packaging be customized?', 'a' => 'Yes, boxes, sleeves, labels and inserts can be coordinated.' ),
+				array( 'q' => 'Can drinkware be bundled?', 'a' => 'Yes, set packaging can be planned when item sizes and carton requirements are confirmed.' ),
+			),
+		),
+	);
+}
+
+function desiole_kitchen_get_category_foundation_for_current_archive() {
+	$object = get_queried_object();
+
+	if ( ! is_product_category() || empty( $object->slug ) ) {
+		return null;
+	}
+
+	$foundations = desiole_kitchen_get_category_seo_foundation();
+
+	return isset( $foundations[ $object->slug ] ) ? $foundations[ $object->slug ] : null;
 }
 
 function desiole_kitchen_get_customization_pages() {
@@ -178,7 +298,6 @@ function desiole_kitchen_enable_catalog_mode() {
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
 	add_action( 'woocommerce_after_shop_loop_item', 'desiole_kitchen_loop_quote_button', 10 );
-	add_action( 'woocommerce_single_product_summary', 'desiole_kitchen_single_quote_button', 30 );
 }
 add_action( 'wp', 'desiole_kitchen_enable_catalog_mode' );
 

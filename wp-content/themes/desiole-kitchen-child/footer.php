@@ -8,6 +8,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$desiole_contact = desiole_kitchen_get_contact_info();
 ?>
 </main>
 <footer class="desiole-footer">
@@ -54,8 +56,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div class="desiole-footer-contact">
 			<h2>Contact</h2>
-			<p><a href="mailto:sales@cheungxin.com">sales@cheungxin.com</a></p>
-			<p>Room 6A, Floor 6, Building 6, Longbi Industrial Zone, Bantian Daipu, Longgang District, Shenzhen, China 518129</p>
+			<p>Email: <a href="mailto:<?php echo esc_attr( $desiole_contact['public_email'] ); ?>"><?php echo esc_html( $desiole_contact['public_email'] ); ?></a></p>
+			<p>Phone: <a href="<?php echo esc_url( $desiole_contact['phone_tel'] ); ?>"><?php echo esc_html( $desiole_contact['phone'] ); ?></a></p>
+			<p>Address: <?php echo esc_html( $desiole_contact['address'] ); ?></p>
 		</div>
 	</div>
 	<div class="desiole-container desiole-footer-bottom">
@@ -67,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</nav>
 	</div>
 </footer>
+<?php get_template_part( 'template-parts/floating-contact' ); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
-
