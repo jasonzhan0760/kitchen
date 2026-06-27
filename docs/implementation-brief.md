@@ -4,6 +4,8 @@
 
 Phase 1: Create a lightweight Astra child theme and implement the DESIOLE Kitchen homepage based on the third selected design.
 
+Phase 1 was reviewed through the logged-in ChatGPT workspace on 2026-06-27. The review result was conditional approval: the direction and core implementation match the agreed plan, but Phase 1 should be self-checked before deeper rollout.
+
 ## Inputs
 
 - Root `README.md`
@@ -69,9 +71,35 @@ The theme should include:
 - Changed files are listed after completion.
 - No existing project decisions are removed unless explicitly requested.
 
+## Phase 1 QA Follow-Up
+
+Before or during Phase 2, verify:
+
+- `header.php` includes `wp_head()`, `wp_body_open()`, and `body_class()`.
+- `footer.php` includes `wp_footer()`.
+- Dynamic output uses WordPress escaping helpers such as `esc_html()`, `esc_url()`, `esc_attr()`, and `wp_kses_post()`.
+- Request Quote product links pass product names through the `/request-quote/?product=...` query parameter.
+- Desktop and mobile navigation support dropdowns for Products, Customization, and About Us.
+- WooCommerce archive and single product pages do not show prices, Add to Cart buttons, quantity selectors, cart links, or checkout links.
+- Footer does not include a phone number.
+- Footer uses the confirmed Shenzhen address.
+- Hero and product images include meaningful alt text.
+
+## Phase 2 Starter Scope
+
+Build the next B2B site foundations:
+
+- Product category archive experience for the seven final product categories.
+- WooCommerce single product B2B inquiry template.
+- Request Quote page with static RFQ fields until the final form plugin is selected.
+- Customization landing and service pages.
+- Amazon FBA support page.
+- About Us core pages: Company Profile, Factory Tour, Quality Control, Blog placeholder, and FAQ.
+
+Phase 2 must keep the third selected design direction: modern B2B red + charcoal style, strong contrast, clean cards, dark footer, and inquiry-first conversion paths.
+
 ## Open Questions
 
 - Final logo files are still pending.
 - Final product images are still pending beyond the generated Phase 1 hero asset.
 - Final Request Quote form plugin or implementation is not yet selected.
-

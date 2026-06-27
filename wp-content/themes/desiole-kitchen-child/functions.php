@@ -11,6 +11,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'DESIOLE_KITCHEN_VERSION', '1.0.0' );
 
+function desiole_kitchen_get_product_categories() {
+	return array(
+		array( 'title' => 'Cooking Tools', 'slug' => 'cooking-tools', 'url' => '/products/cooking-tools/', 'meta' => 'Utensils, pans, prep tools and everyday cooking essentials' ),
+		array( 'title' => 'Baking Tools', 'slug' => 'baking-tools', 'url' => '/products/baking-tools/', 'meta' => 'Bakeware, molds, spatulas and decorating tools' ),
+		array( 'title' => 'Coffee, Bar & Cigar Accessories', 'slug' => 'coffee-bar-cigar-accessories', 'url' => '/products/coffee-bar-cigar-accessories/', 'meta' => 'Coffee tools, barware and premium accessory sourcing' ),
+		array( 'title' => 'Kitchen Utensils & Gadgets', 'slug' => 'kitchen-utensils-gadgets', 'url' => '/products/kitchen-utensils-gadgets/', 'meta' => 'High-demand gadgets with custom logo options' ),
+		array( 'title' => 'Kitchen Organization', 'slug' => 'kitchen-organization', 'url' => '/products/kitchen-organization/', 'meta' => 'Storage, racks, containers and space-saving solutions' ),
+		array( 'title' => 'Kitchen Appliances', 'slug' => 'kitchen-appliances', 'url' => '/products/kitchen-appliances/', 'meta' => 'Compact appliances for wholesale and private label programs' ),
+		array( 'title' => 'Drinkware', 'slug' => 'drinkware', 'url' => '/products/drinkware/', 'meta' => 'Cups, bottles and daily drinkware for branded supply' ),
+	);
+}
+
+function desiole_kitchen_get_customization_pages() {
+	return array(
+		array( 'title' => 'Custom Logos', 'slug' => 'custom-logos', 'url' => '/customization/custom-logos/', 'meta' => 'Logo printing, laser marking, embossing and branded product presentation.' ),
+		array( 'title' => 'Private Label Packaging', 'slug' => 'private-label-packaging', 'url' => '/customization/private-label-packaging/', 'meta' => 'Retail boxes, color sleeves, hang tags, inserts and Amazon-ready packaging.' ),
+		array( 'title' => 'Custom Colors & Materials', 'slug' => 'custom-colors-materials', 'url' => '/customization/custom-colors-materials/', 'meta' => 'Buyer-led colorways, finish options and material adjustments for selected products.' ),
+		array( 'title' => 'OEM/ODM Manufacturing', 'slug' => 'oem-odm-manufacturing', 'url' => '/customization/oem-odm-manufacturing/', 'meta' => 'Product development support from sample review to production and packaging.' ),
+		array( 'title' => 'Low MOQ Customization', 'slug' => 'low-moq-customization', 'url' => '/customization/low-moq-customization/', 'meta' => 'Practical trial-order customization for new product launches and market tests.' ),
+	);
+}
+
 function desiole_kitchen_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo' );
@@ -56,43 +78,63 @@ function desiole_kitchen_quote_url( $product = null ) {
 
 function desiole_kitchen_nav_fallback() {
 	$items = array(
-		'Home'          => home_url( '/' ),
-		'Products'      => home_url( '/products/' ),
-		'Customization' => home_url( '/customization/' ),
-		'Amazon FBA'    => home_url( '/amazon-fba/' ),
-		'About Us'      => home_url( '/about-us/company-profile/' ),
-		'Contact'       => home_url( '/contact/' ),
+		array( 'label' => 'Home', 'url' => home_url( '/' ) ),
+		array(
+			'label'    => 'Products',
+			'url'      => home_url( '/products/' ),
+			'children' => desiole_kitchen_get_product_categories(),
+		),
+		array(
+			'label'    => 'Customization',
+			'url'      => home_url( '/customization/' ),
+			'children' => desiole_kitchen_get_customization_pages(),
+		),
+		array( 'label' => 'Amazon FBA', 'url' => home_url( '/amazon-fba/' ) ),
+		array(
+			'label'    => 'About Us',
+			'url'      => home_url( '/about-us/company-profile/' ),
+			'children' => array(
+				array( 'title' => 'Company Profile', 'url' => '/about-us/company-profile/' ),
+				array( 'title' => 'Factory Tour', 'url' => '/about-us/factory-tour/' ),
+				array( 'title' => 'Quality Control', 'url' => '/about-us/quality-control/' ),
+				array( 'title' => 'Blog', 'url' => '/blog/' ),
+				array( 'title' => 'FAQ', 'url' => '/faq/' ),
+			),
+		),
+		array( 'label' => 'Contact', 'url' => home_url( '/contact/' ) ),
 	);
 
 	echo '<ul class="desiole-nav-list">';
-	foreach ( $items as $label => $url ) {
+	foreach ( $items as $item ) {
 		printf(
-			'<li><a href="%s">%s</a></li>',
-			esc_url( $url ),
-			esc_html( $label )
+			'<li class="%s"><a href="%s">%s</a>',
+			empty( $item['children'] ) ? '' : 'menu-item-has-children',
+			esc_url( $item['url'] ),
+			esc_html( $item['label'] )
 		);
+
+		if ( ! empty( $item['children'] ) ) {
+			echo '<ul class="sub-menu">';
+			foreach ( $item['children'] as $child ) {
+				$child_url = isset( $child['url'] ) && 0 === strpos( $child['url'], 'http' ) ? $child['url'] : home_url( $child['url'] );
+				printf(
+					'<li><a href="%s">%s</a></li>',
+					esc_url( $child_url ),
+					esc_html( $child['title'] )
+				);
+			}
+			echo '</ul>';
+		}
+
+		echo '</li>';
 	}
 	echo '</ul>';
 }
 
 function desiole_kitchen_footer_menu_fallback( $type ) {
 	$menus = array(
-		'products'      => array(
-			'Cooking Tools'                    => '/products/cooking-tools/',
-			'Baking Tools'                     => '/products/baking-tools/',
-			'Coffee, Bar & Cigar Accessories'  => '/products/coffee-bar-cigar-accessories/',
-			'Kitchen Utensils & Gadgets'       => '/products/kitchen-utensils-gadgets/',
-			'Kitchen Organization'             => '/products/kitchen-organization/',
-			'Kitchen Appliances'               => '/products/kitchen-appliances/',
-			'Drinkware'                        => '/products/drinkware/',
-		),
-		'customization' => array(
-			'Custom Logos'             => '/customization/custom-logos/',
-			'Private Label Packaging'  => '/customization/private-label-packaging/',
-			'Custom Colors & Materials'=> '/customization/custom-colors-materials/',
-			'OEM/ODM Manufacturing'    => '/customization/oem-odm-manufacturing/',
-			'Low MOQ Customization'    => '/customization/low-moq-customization/',
-		),
+		'products'      => wp_list_pluck( desiole_kitchen_get_product_categories(), 'url', 'title' ),
+		'customization' => wp_list_pluck( desiole_kitchen_get_customization_pages(), 'url', 'title' ),
 		'about'         => array(
 			'Company Profile' => '/about-us/company-profile/',
 			'Factory Tour'    => '/about-us/factory-tour/',

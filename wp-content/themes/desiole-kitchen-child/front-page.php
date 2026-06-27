@@ -9,15 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$categories = array(
-	array( 'title' => 'Cooking Tools', 'url' => '/products/cooking-tools/', 'meta' => 'Utensils, pans, prep tools and everyday cooking essentials' ),
-	array( 'title' => 'Baking Tools', 'url' => '/products/baking-tools/', 'meta' => 'Bakeware, molds, spatulas and decorating tools' ),
-	array( 'title' => 'Coffee, Bar & Cigar Accessories', 'url' => '/products/coffee-bar-cigar-accessories/', 'meta' => 'Coffee tools, barware and premium accessory sourcing' ),
-	array( 'title' => 'Kitchen Utensils & Gadgets', 'url' => '/products/kitchen-utensils-gadgets/', 'meta' => 'High-demand gadgets with custom logo options' ),
-	array( 'title' => 'Kitchen Organization', 'url' => '/products/kitchen-organization/', 'meta' => 'Storage, racks, containers and space-saving solutions' ),
-	array( 'title' => 'Kitchen Appliances', 'url' => '/products/kitchen-appliances/', 'meta' => 'Compact appliances for wholesale and private label programs' ),
-	array( 'title' => 'Drinkware', 'url' => '/products/drinkware/', 'meta' => 'Cups, bottles and daily drinkware for branded supply' ),
-);
+$categories = desiole_kitchen_get_product_categories();
 
 $services = array(
 	array( 'title' => 'Customization & Branding', 'text' => 'Custom logos, colors, materials and private label packaging for differentiated product lines.', 'url' => '/customization/' ),
