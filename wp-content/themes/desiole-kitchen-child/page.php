@@ -91,15 +91,23 @@ $page = isset( $pages[ $slug ] ) ? $pages[ $slug ] : array(
 	'title'  => get_the_title(),
 	'intro'  => '',
 );
+$page_image = desiole_kitchen_image_url( desiole_kitchen_get_page_image( $slug ) );
 
 get_header();
 ?>
 <section class="desiole-page-hero">
-	<div class="desiole-container">
-		<p class="desiole-kicker"><?php echo esc_html( $page['kicker'] ); ?></p>
-		<h1><?php echo esc_html( $page['title'] ); ?></h1>
-		<?php if ( ! empty( $page['intro'] ) ) : ?>
-			<p><?php echo esc_html( $page['intro'] ); ?></p>
+	<div class="desiole-container<?php echo $page_image ? ' desiole-page-hero-grid' : ''; ?>">
+		<div>
+			<p class="desiole-kicker"><?php echo esc_html( $page['kicker'] ); ?></p>
+			<h1><?php echo esc_html( $page['title'] ); ?></h1>
+			<?php if ( ! empty( $page['intro'] ) ) : ?>
+				<p><?php echo esc_html( $page['intro'] ); ?></p>
+			<?php endif; ?>
+		</div>
+		<?php if ( $page_image ) : ?>
+			<div class="desiole-page-hero-media">
+				<img src="<?php echo esc_url( $page_image ); ?>" alt="<?php echo esc_attr( $page['title'] . ' visual' ); ?>">
+			</div>
 		<?php endif; ?>
 	</div>
 </section>
@@ -109,7 +117,13 @@ get_header();
 		<?php if ( ! empty( $page['cards'] ) ) : ?>
 			<div class="desiole-category-grid">
 				<?php foreach ( $page['cards'] as $card ) : ?>
+					<?php $card_image = desiole_kitchen_image_url( isset( $card['image'] ) ? $card['image'] : '' ); ?>
 					<a class="desiole-category-card" href="<?php echo esc_url( home_url( $card['url'] ) ); ?>">
+						<?php if ( $card_image ) : ?>
+							<span class="desiole-card-media">
+								<img src="<?php echo esc_url( $card_image ); ?>" alt="<?php echo esc_attr( $card['title'] . ' service visual' ); ?>">
+							</span>
+						<?php endif; ?>
 						<span class="desiole-card-line"></span>
 						<h2><?php echo esc_html( $card['title'] ); ?></h2>
 						<p><?php echo esc_html( $card['meta'] ); ?></p>

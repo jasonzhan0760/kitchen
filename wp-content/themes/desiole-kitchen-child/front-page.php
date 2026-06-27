@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 $categories = desiole_kitchen_get_product_categories();
 
 $services = array(
-	array( 'title' => 'Customization & Branding', 'text' => 'Custom logos, colors, materials and private label packaging for differentiated product lines.', 'url' => '/customization/' ),
-	array( 'title' => 'Amazon FBA Preparation', 'text' => 'Packaging, labeling and shipment preparation support for Amazon sellers and cross-border teams.', 'url' => '/amazon-fba/' ),
-	array( 'title' => 'Quality You Can Trust', 'text' => 'Export-ready quality control across product selection, sampling, production and packaging.', 'url' => '/about-us/quality-control/' ),
+	array( 'title' => 'Customization & Branding', 'text' => 'Custom logos, colors, materials and private label packaging for differentiated product lines.', 'url' => '/customization/', 'image' => 'service-customization-packaging.png' ),
+	array( 'title' => 'Amazon FBA Preparation', 'text' => 'Packaging, labeling and shipment preparation support for Amazon sellers and cross-border teams.', 'url' => '/amazon-fba/', 'image' => 'service-amazon-fba-prep.png' ),
+	array( 'title' => 'Quality You Can Trust', 'text' => 'Export-ready quality control across product selection, sampling, production and packaging.', 'url' => '/about-us/quality-control/', 'image' => 'service-quality-control.png' ),
 );
 
 $featured_fallback = array(
@@ -68,7 +68,13 @@ get_header();
 		</div>
 		<div class="desiole-category-grid">
 			<?php foreach ( $categories as $category ) : ?>
+				<?php $category_image = desiole_kitchen_image_url( isset( $category['image'] ) ? $category['image'] : '' ); ?>
 				<a class="desiole-category-card" href="<?php echo esc_url( home_url( $category['url'] ) ); ?>">
+					<?php if ( $category_image ) : ?>
+						<span class="desiole-card-media">
+							<img src="<?php echo esc_url( $category_image ); ?>" alt="<?php echo esc_attr( $category['title'] . ' wholesale product category' ); ?>">
+						</span>
+					<?php endif; ?>
 					<span class="desiole-card-line"></span>
 					<h3><?php echo esc_html( $category['title'] ); ?></h3>
 					<p><?php echo esc_html( $category['meta'] ); ?></p>
@@ -99,8 +105,15 @@ get_header();
 <section class="desiole-section">
 	<div class="desiole-container desiole-service-grid">
 		<?php foreach ( $services as $service ) : ?>
+			<?php $service_image = desiole_kitchen_image_url( isset( $service['image'] ) ? $service['image'] : '' ); ?>
 			<article class="desiole-service-card">
-				<span class="desiole-service-index"></span>
+				<?php if ( $service_image ) : ?>
+					<div class="desiole-service-media">
+						<img src="<?php echo esc_url( $service_image ); ?>" alt="<?php echo esc_attr( $service['title'] . ' service visual' ); ?>">
+					</div>
+				<?php else : ?>
+					<span class="desiole-service-index"></span>
+				<?php endif; ?>
 				<h2><?php echo esc_html( $service['title'] ); ?></h2>
 				<p><?php echo esc_html( $service['text'] ); ?></p>
 				<a href="<?php echo esc_url( home_url( $service['url'] ) ); ?>">Learn more</a>

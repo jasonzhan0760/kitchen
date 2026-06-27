@@ -413,6 +413,32 @@
 	text-decoration: none;
 }
 
+.desiole-card-media,
+.desiole-service-media,
+.desiole-page-hero-media {
+	display: block;
+	overflow: hidden;
+	border-radius: 8px;
+	background: var(--desiole-warm);
+}
+
+.desiole-card-media {
+	margin: -12px -12px 20px;
+}
+
+.desiole-card-media img,
+.desiole-service-media img,
+.desiole-page-hero-media img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.desiole-card-media img {
+	aspect-ratio: 4 / 3;
+}
+
 .desiole-card-line {
 	display: block;
 	width: 44px;
@@ -473,6 +499,14 @@
 
 .desiole-service-card {
 	padding: 30px;
+}
+
+.desiole-service-media {
+	margin-bottom: 24px;
+}
+
+.desiole-service-media img {
+	aspect-ratio: 16 / 10;
 }
 
 .desiole-service-index {
@@ -670,6 +704,22 @@
 
 .desiole-page-hero .desiole-container {
 	padding: 88px 0 76px;
+}
+
+.desiole-page-hero-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+	gap: 44px;
+	align-items: center;
+}
+
+.desiole-page-hero-media {
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	box-shadow: 0 26px 70px rgba(0, 0, 0, 0.25);
+}
+
+.desiole-page-hero-media img {
+	aspect-ratio: 4 / 3;
 }
 
 .desiole-page-hero .desiole-kicker {
@@ -1048,6 +1098,7 @@
 	}
 
 	.desiole-hero-grid,
+	.desiole-page-hero-grid,
 	.desiole-why-grid,
 	.desiole-faq-grid,
 	.desiole-final-cta-inner {
@@ -1111,6 +1162,10 @@
 
 	.desiole-section {
 		padding: 58px 0;
+	}
+
+	.desiole-page-hero .desiole-container {
+		padding: 62px 0 54px;
 	}
 
 	.desiole-footer-bottom nav {

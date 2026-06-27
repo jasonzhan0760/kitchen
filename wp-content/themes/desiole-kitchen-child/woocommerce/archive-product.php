@@ -12,19 +12,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 $queried_object = get_queried_object();
 $category_name  = is_product_category() && isset( $queried_object->name ) ? $queried_object->name : woocommerce_page_title( false );
 $foundation     = desiole_kitchen_get_category_foundation_for_current_archive();
+$category_card  = is_product_category() && isset( $queried_object->slug ) ? desiole_kitchen_get_product_category_by_slug( $queried_object->slug ) : null;
+$archive_image  = $category_card && ! empty( $category_card['image'] ) ? desiole_kitchen_image_url( $category_card['image'] ) : '';
 
 get_header();
 ?>
 <section class="desiole-page-hero">
-	<div class="desiole-container">
-		<p class="desiole-kicker">Product catalog</p>
-		<h1><?php echo esc_html( $foundation ? $foundation['h1'] : woocommerce_page_title( false ) ); ?></h1>
-		<?php if ( term_description() ) : ?>
-			<div class="desiole-archive-description"><?php echo wp_kses_post( term_description() ); ?></div>
-		<?php elseif ( $foundation ) : ?>
-			<p><?php echo esc_html( $foundation['intro'] ); ?></p>
-		<?php else : ?>
-			<p>Browse wholesale kitchen tools for private label, retail, distribution and Amazon FBA sourcing projects.</p>
+	<div class="desiole-container<?php echo $archive_image ? ' desiole-page-hero-grid' : ''; ?>">
+		<div>
+			<p class="desiole-kicker">Product catalog</p>
+			<h1><?php echo esc_html( $foundation ? $foundation['h1'] : woocommerce_page_title( false ) ); ?></h1>
+			<?php if ( term_description() ) : ?>
+				<div class="desiole-archive-description"><?php echo wp_kses_post( term_description() ); ?></div>
+			<?php elseif ( $foundation ) : ?>
+				<p><?php echo esc_html( $foundation['intro'] ); ?></p>
+			<?php else : ?>
+				<p>Browse wholesale kitchen tools for private label, retail, distribution and Amazon FBA sourcing projects.</p>
+			<?php endif; ?>
+		</div>
+		<?php if ( $archive_image ) : ?>
+			<div class="desiole-page-hero-media">
+				<img src="<?php echo esc_url( $archive_image ); ?>" alt="<?php echo esc_attr( $category_name . ' wholesale category visual' ); ?>">
+			</div>
 		<?php endif; ?>
 	</div>
 </section>

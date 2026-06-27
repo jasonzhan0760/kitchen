@@ -11,6 +11,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'DESIOLE_KITCHEN_VERSION', '1.0.0' );
 
+function desiole_kitchen_image_url( $filename ) {
+	$filename = ltrim( (string) $filename, '/' );
+	$path     = get_stylesheet_directory() . '/assets/images/' . $filename;
+
+	if ( ! $filename || ! file_exists( $path ) ) {
+		return '';
+	}
+
+	return get_stylesheet_directory_uri() . '/assets/images/' . $filename;
+}
+
 function desiole_kitchen_get_contact_info() {
 	return array(
 		'public_email'  => 'sales@desiole.com',
@@ -25,14 +36,24 @@ function desiole_kitchen_get_contact_info() {
 
 function desiole_kitchen_get_product_categories() {
 	return array(
-		array( 'title' => 'Cooking Tools', 'slug' => 'cooking-tools', 'url' => '/products/cooking-tools/', 'meta' => 'Utensils, pans, prep tools and everyday cooking essentials' ),
-		array( 'title' => 'Baking Tools', 'slug' => 'baking-tools', 'url' => '/products/baking-tools/', 'meta' => 'Bakeware, molds, spatulas and decorating tools' ),
-		array( 'title' => 'Coffee, Bar & Cigar Accessories', 'slug' => 'coffee-bar-cigar-accessories', 'url' => '/products/coffee-bar-cigar-accessories/', 'meta' => 'Coffee tools, barware and premium accessory sourcing' ),
-		array( 'title' => 'Kitchen Utensils & Gadgets', 'slug' => 'kitchen-utensils-gadgets', 'url' => '/products/kitchen-utensils-gadgets/', 'meta' => 'High-demand gadgets with custom logo options' ),
-		array( 'title' => 'Kitchen Organization', 'slug' => 'kitchen-organization', 'url' => '/products/kitchen-organization/', 'meta' => 'Storage, racks, containers and space-saving solutions' ),
-		array( 'title' => 'Kitchen Appliances', 'slug' => 'kitchen-appliances', 'url' => '/products/kitchen-appliances/', 'meta' => 'Compact appliances for wholesale and private label programs' ),
-		array( 'title' => 'Drinkware', 'slug' => 'drinkware', 'url' => '/products/drinkware/', 'meta' => 'Cups, bottles and daily drinkware for branded supply' ),
+		array( 'title' => 'Cooking Tools', 'slug' => 'cooking-tools', 'url' => '/products/cooking-tools/', 'meta' => 'Utensils, pans, prep tools and everyday cooking essentials', 'image' => 'category-cooking-tools.png' ),
+		array( 'title' => 'Baking Tools', 'slug' => 'baking-tools', 'url' => '/products/baking-tools/', 'meta' => 'Bakeware, molds, spatulas and decorating tools', 'image' => 'category-baking-tools.png' ),
+		array( 'title' => 'Coffee, Bar & Cigar Accessories', 'slug' => 'coffee-bar-cigar-accessories', 'url' => '/products/coffee-bar-cigar-accessories/', 'meta' => 'Coffee tools, barware and premium accessory sourcing', 'image' => 'category-coffee-bar-cigar.png' ),
+		array( 'title' => 'Kitchen Utensils & Gadgets', 'slug' => 'kitchen-utensils-gadgets', 'url' => '/products/kitchen-utensils-gadgets/', 'meta' => 'High-demand gadgets with custom logo options', 'image' => 'category-kitchen-utensils-gadgets.png' ),
+		array( 'title' => 'Kitchen Organization', 'slug' => 'kitchen-organization', 'url' => '/products/kitchen-organization/', 'meta' => 'Storage, racks, containers and space-saving solutions', 'image' => 'category-kitchen-organization.png' ),
+		array( 'title' => 'Kitchen Appliances', 'slug' => 'kitchen-appliances', 'url' => '/products/kitchen-appliances/', 'meta' => 'Compact appliances for wholesale and private label programs', 'image' => 'category-kitchen-appliances.png' ),
+		array( 'title' => 'Drinkware', 'slug' => 'drinkware', 'url' => '/products/drinkware/', 'meta' => 'Cups, bottles and daily drinkware for branded supply', 'image' => 'category-drinkware.png' ),
 	);
+}
+
+function desiole_kitchen_get_product_category_by_slug( $slug ) {
+	foreach ( desiole_kitchen_get_product_categories() as $category ) {
+		if ( $slug === $category['slug'] ) {
+			return $category;
+		}
+	}
+
+	return null;
 }
 
 function desiole_kitchen_get_category_seo_foundation() {
@@ -145,12 +166,31 @@ function desiole_kitchen_get_category_foundation_for_current_archive() {
 
 function desiole_kitchen_get_customization_pages() {
 	return array(
-		array( 'title' => 'Custom Logos', 'slug' => 'custom-logos', 'url' => '/customization/custom-logos/', 'meta' => 'Logo printing, laser marking, embossing and branded product presentation.' ),
-		array( 'title' => 'Private Label Packaging', 'slug' => 'private-label-packaging', 'url' => '/customization/private-label-packaging/', 'meta' => 'Retail boxes, color sleeves, hang tags, inserts and Amazon-ready packaging.' ),
-		array( 'title' => 'Custom Colors & Materials', 'slug' => 'custom-colors-materials', 'url' => '/customization/custom-colors-materials/', 'meta' => 'Buyer-led colorways, finish options and material adjustments for selected products.' ),
-		array( 'title' => 'OEM/ODM Manufacturing', 'slug' => 'oem-odm-manufacturing', 'url' => '/customization/oem-odm-manufacturing/', 'meta' => 'Product development support from sample review to production and packaging.' ),
-		array( 'title' => 'Low MOQ Customization', 'slug' => 'low-moq-customization', 'url' => '/customization/low-moq-customization/', 'meta' => 'Practical trial-order customization for new product launches and market tests.' ),
+		array( 'title' => 'Custom Logos', 'slug' => 'custom-logos', 'url' => '/customization/custom-logos/', 'meta' => 'Logo printing, laser marking, embossing and branded product presentation.', 'image' => 'service-customization-packaging.png' ),
+		array( 'title' => 'Private Label Packaging', 'slug' => 'private-label-packaging', 'url' => '/customization/private-label-packaging/', 'meta' => 'Retail boxes, color sleeves, hang tags, inserts and Amazon-ready packaging.', 'image' => 'service-customization-packaging.png' ),
+		array( 'title' => 'Custom Colors & Materials', 'slug' => 'custom-colors-materials', 'url' => '/customization/custom-colors-materials/', 'meta' => 'Buyer-led colorways, finish options and material adjustments for selected products.', 'image' => 'service-customization-packaging.png' ),
+		array( 'title' => 'OEM/ODM Manufacturing', 'slug' => 'oem-odm-manufacturing', 'url' => '/customization/oem-odm-manufacturing/', 'meta' => 'Product development support from sample review to production and packaging.', 'image' => 'service-warehouse-packaging.png' ),
+		array( 'title' => 'Low MOQ Customization', 'slug' => 'low-moq-customization', 'url' => '/customization/low-moq-customization/', 'meta' => 'Practical trial-order customization for new product launches and market tests.', 'image' => 'icons-b2b-benefits.png' ),
 	);
+}
+
+function desiole_kitchen_get_page_image( $slug ) {
+	$images = array(
+		'products'                => 'home-hero-kitchen-tools.png',
+		'customization'           => 'service-customization-packaging.png',
+		'amazon-fba'              => 'service-amazon-fba-prep.png',
+		'custom-logos'            => 'service-customization-packaging.png',
+		'private-label-packaging' => 'service-customization-packaging.png',
+		'custom-colors-materials' => 'service-customization-packaging.png',
+		'oem-odm-manufacturing'   => 'service-warehouse-packaging.png',
+		'low-moq-customization'   => 'icons-b2b-benefits.png',
+		'company-profile'         => 'service-warehouse-packaging.png',
+		'factory-tour'            => 'service-warehouse-packaging.png',
+		'quality-control'         => 'service-quality-control.png',
+		'contact'                 => 'icons-contact-actions.png',
+	);
+
+	return isset( $images[ $slug ] ) ? $images[ $slug ] : '';
 }
 
 function desiole_kitchen_setup() {

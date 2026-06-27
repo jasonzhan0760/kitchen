@@ -15,6 +15,7 @@ Use this file to record project decisions, conflicts, and confirmations.
 | 2026-06-27 | Phone number is now confirmed as `+86 13760004391`; the previous no-phone rule is superseded. Use `tel:+8613760004391` for clickable phone links and `https://wa.me/8613760004391` for WhatsApp. | User confirmation |
 | 2026-06-27 | Public website contact email is corrected to `sales@desiole.com`. RFQ form submission emails go to `sales@desiole.com` and CC `stella@desiole.com`. | User confirmation |
 | 2026-06-27 | Add two right-side fixed contact icons: WhatsApp linking to `https://wa.me/8613760004391` and Contact linking to `/contact/`. | User confirmation |
+| 2026-06-27 | Phase 2.3 visual asset integration should use ChatGPT-generated DESIOLE Kitchen imagery for homepage categories, service cards, page heroes and WooCommerce category archives. Missing files should be skipped rather than rendering broken images. | ChatGPT asset batch and Codex implementation |
 
 ## Conflicts
 

@@ -135,3 +135,39 @@ Phase 2.2 implements the following confirmed updates:
 - Mobile dropdowns use independent submenu toggles with `aria-expanded`.
 - Product category SEO starter copy exists for all seven categories.
 - Homepage factory-direct data strip uses a dark charcoal background with red accent details.
+
+## Phase 2.3 Visual Asset Integration
+
+ChatGPT generated the first visual asset batch for the DESIOLE Kitchen third selected homepage direction. The theme should use those assets without becoming dependent on missing files.
+
+Expected image destination:
+
+```text
+wp-content/themes/desiole-kitchen-child/assets/images/
+```
+
+Expected filenames:
+
+- `home-hero-kitchen-tools.png`
+- `category-cooking-tools.png`
+- `category-baking-tools.png`
+- `category-coffee-bar-cigar.png`
+- `category-kitchen-utensils-gadgets.png`
+- `category-kitchen-organization.png`
+- `category-kitchen-appliances.png`
+- `category-drinkware.png`
+- `service-customization-packaging.png`
+- `service-amazon-fba-prep.png`
+- `service-quality-control.png`
+- `service-warehouse-packaging.png`
+- `icons-b2b-benefits.png`
+- `icons-contact-actions.png`
+
+Implementation rules:
+
+- Category card images use the seven final product category filenames.
+- Homepage service cards use customization, Amazon FBA and quality control images.
+- Page heroes reuse the closest approved visual asset by page type.
+- WooCommerce category archives reuse the same category image mapping.
+- Missing files must not create broken images; only render an image when it exists.
+- Formal logo SVG, favicon, screenshot and real SKU images remain pending.
