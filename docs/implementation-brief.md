@@ -170,4 +170,31 @@ Implementation rules:
 - Page heroes reuse the closest approved visual asset by page type.
 - WooCommerce category archives reuse the same category image mapping.
 - Missing files must not create broken images; only render an image when it exists.
-- Formal logo SVG, favicon, screenshot and real SKU images remain pending.
+- Formal logo SVG, favicon and real SKU images remain pending.
+
+## Phase 2.4 Visual QA Preparation
+
+Phase 2.4 prepares the project for visual review and a real WordPress install check.
+
+Completed preparation:
+
+- Added the WordPress theme preview image at `wp-content/themes/desiole-kitchen-child/screenshot.png`.
+- The preview follows the third selected design direction: modern B2B red + charcoal style, strong contrast, product-set hero, factory-direct data strip and product category cards.
+- The preview uses the current approved generated product imagery and the text brand `DESIOLE Kitchen`.
+- The preview does not invent a formal logo, favicon or final icon system.
+
+Real WordPress visual QA is still required after WordPress, Astra parent theme and WooCommerce are available in a running install.
+
+Phase 2.4 QA should verify:
+
+- Homepage desktop and mobile layout.
+- Products archive and seven category archives.
+- Single product inquiry template.
+- Customization pages.
+- Amazon FBA page.
+- About Us, Factory Tour, Quality Control, Blog placeholder and FAQ pages.
+- Contact and Request Quote pages.
+- Mobile navigation dropdown behavior.
+- WooCommerce catalog mode: no prices, Add to Cart buttons, cart links or checkout links.
+- RFQ form delivery to `sales@desiole.com` with CC to `stella@desiole.com`.
+- Public email, phone, WhatsApp and address display.

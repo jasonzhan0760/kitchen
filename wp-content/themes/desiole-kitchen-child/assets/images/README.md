@@ -28,6 +28,10 @@ Final brand assets still needed:
 - `desiole-kitchen-logo.svg`
 - `desiole-kitchen-logo-full.svg`
 - `desiole-kitchen-icon.svg`
-- `screenshot.png`
 
 Do not replace these with invented logo artwork. Add the approved DESIOLE Kitchen logo files after the final brand assets are confirmed.
+
+Theme preview:
+
+- `../screenshot.png` is the WordPress theme preview image generated from the approved red + charcoal homepage direction and current product imagery.
+- The screenshot uses the text brand `DESIOLE Kitchen`; it is not a substitute for the final logo SVG or favicon assets.
