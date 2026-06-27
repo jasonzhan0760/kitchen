@@ -98,6 +98,22 @@ Build the next B2B site foundations:
 
 Phase 2 must keep the third selected design direction: modern B2B red + charcoal style, strong contrast, clean cards, dark footer, and inquiry-first conversion paths.
 
+## Phase 2.1 QA Fix Scope
+
+Phase 2 starter was reviewed through the logged-in ChatGPT workspace on 2026-06-27 after the GitHub repository was made public. The review result was starter foundations conditionally approved. Phase 2.1 fixes should be completed before deeper content expansion.
+
+Phase 2.1 fixes:
+
+- Keep `style.css` as a standard Astra child theme header.
+- Replace placeholder `docs/site-plan.md` content with the real DESIOLE Kitchen site plan.
+- Add lightweight mobile navigation with a hamburger button, `aria-expanded`, `aria-controls`, usable dropdowns, and a visible Request Quote action.
+- Improve product category archives into B2B landing foundations with wholesale advantages, customization options, MOQ / packaging / shipping notes, FAQ and CTA.
+- Improve the single product B2B template with gallery support, custom product meta fields, specification fallbacks, related products and Request Quote query links.
+- Keep WooCommerce catalog mode active across archive, single product, cart and checkout paths.
+- Document pending logo and screenshot assets instead of inventing unapproved brand artwork.
+
+Phase 2.1 still requires visual checking inside a running WordPress install after the theme is activated and WooCommerce sample products are added.
+
 ## Open Questions
 
 - Final logo files are still pending.

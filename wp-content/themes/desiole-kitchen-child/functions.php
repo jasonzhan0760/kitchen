@@ -63,6 +63,14 @@ function desiole_kitchen_enqueue_assets() {
 		array( 'astra-parent-style' ),
 		DESIOLE_KITCHEN_VERSION
 	);
+
+	wp_enqueue_script(
+		'desiole-kitchen-navigation',
+		get_stylesheet_directory_uri() . '/assets/js/navigation.js',
+		array(),
+		DESIOLE_KITCHEN_VERSION,
+		true
+	);
 }
 add_action( 'wp_enqueue_scripts', 'desiole_kitchen_enqueue_assets' );
 

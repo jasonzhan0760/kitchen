@@ -33,7 +33,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<small>Wholesale Kitchen Tools</small>
 			</span>
 		</a>
-		<nav class="desiole-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'desiole-kitchen' ); ?>">
+		<button class="desiole-menu-toggle" type="button" aria-expanded="false" aria-controls="desiole-primary-nav">
+			<span class="screen-reader-text"><?php esc_html_e( 'Toggle navigation', 'desiole-kitchen' ); ?></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</button>
+		<nav id="desiole-primary-nav" class="desiole-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'desiole-kitchen' ); ?>">
 			<?php
 			if ( has_nav_menu( 'primary' ) ) {
 				wp_nav_menu(
@@ -48,9 +54,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				desiole_kitchen_nav_fallback();
 			}
 			?>
+			<a class="desiole-button desiole-button-primary desiole-mobile-quote" href="<?php echo esc_url( home_url( '/request-quote/' ) ); ?>">Request Quote</a>
 		</nav>
 		<a class="desiole-button desiole-button-primary desiole-header-cta" href="<?php echo esc_url( home_url( '/request-quote/' ) ); ?>">Request Quote</a>
 	</div>
 </header>
 <main id="content" class="desiole-main">
-
