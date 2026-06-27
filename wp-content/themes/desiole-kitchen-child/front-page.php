@@ -18,10 +18,10 @@ $services = array(
 );
 
 $featured_fallback = array(
-	array( 'name' => 'Stainless Steel Cooking Utensil Set', 'category' => 'Cooking Tools' ),
-	array( 'name' => 'Silicone Baking Tool Collection', 'category' => 'Baking Tools' ),
-	array( 'name' => 'Private Label Drinkware Series', 'category' => 'Drinkware' ),
-	array( 'name' => 'Kitchen Organization Starter Range', 'category' => 'Kitchen Organization' ),
+	array( 'name' => 'Stainless Steel Cooking Utensil Set', 'category' => 'Cooking Tools', 'image' => 'category-cooking-tools.png' ),
+	array( 'name' => 'Silicone Baking Tool Collection', 'category' => 'Baking Tools', 'image' => 'category-baking-tools.png' ),
+	array( 'name' => 'Private Label Drinkware Series', 'category' => 'Drinkware', 'image' => 'category-drinkware.png' ),
+	array( 'name' => 'Kitchen Organization Starter Range', 'category' => 'Kitchen Organization', 'image' => 'category-kitchen-organization.png' ),
 );
 
 $faqs = array(
@@ -154,9 +154,16 @@ get_header();
 					endforeach;
 				else :
 					foreach ( $featured_fallback as $item ) :
+						$fallback_image = desiole_kitchen_image_url( isset( $item['image'] ) ? $item['image'] : '' );
 						?>
 						<article class="desiole-product-card">
-							<div class="desiole-product-image desiole-product-placeholder"></div>
+							<?php if ( $fallback_image ) : ?>
+								<div class="desiole-product-image">
+									<img src="<?php echo esc_url( $fallback_image ); ?>" alt="<?php echo esc_attr( $item['name'] ); ?>">
+								</div>
+							<?php else : ?>
+								<div class="desiole-product-image desiole-product-placeholder"></div>
+							<?php endif; ?>
 							<p class="desiole-product-category"><?php echo esc_html( $item['category'] ); ?></p>
 							<h3><?php echo esc_html( $item['name'] ); ?></h3>
 							<p>Wholesale supply with customization and packaging support.</p>
@@ -167,9 +174,16 @@ get_header();
 				endif;
 			} else {
 				foreach ( $featured_fallback as $item ) :
+					$fallback_image = desiole_kitchen_image_url( isset( $item['image'] ) ? $item['image'] : '' );
 					?>
 					<article class="desiole-product-card">
-						<div class="desiole-product-image desiole-product-placeholder"></div>
+						<?php if ( $fallback_image ) : ?>
+							<div class="desiole-product-image">
+								<img src="<?php echo esc_url( $fallback_image ); ?>" alt="<?php echo esc_attr( $item['name'] ); ?>">
+							</div>
+						<?php else : ?>
+							<div class="desiole-product-image desiole-product-placeholder"></div>
+						<?php endif; ?>
 						<p class="desiole-product-category"><?php echo esc_html( $item['category'] ); ?></p>
 						<h3><?php echo esc_html( $item['name'] ); ?></h3>
 						<p>Wholesale supply with customization and packaging support.</p>
