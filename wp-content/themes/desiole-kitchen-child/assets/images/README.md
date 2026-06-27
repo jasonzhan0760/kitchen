@@ -21,7 +21,7 @@ Current included images:
 
 The theme maps these filenames to the homepage hero, category cards, featured-product fallbacks, page heroes, service cards and WooCommerce category archives. Missing files are skipped automatically so the site does not show broken images while final assets are being downloaded or replaced.
 
-Note: `icons-contact-actions.png` is stored as a visual asset from the generated set, but public contact content should only display confirmed channels. Do not add a phone number to public copy unless it is explicitly approved for the site.
+Note: `icons-contact-actions.png` is stored as a visual asset from the generated set. Public contact content should only display confirmed channels. The phone number `+86 13760004391` is explicitly approved for public website contact areas.
 
 Final brand assets still needed:
 
